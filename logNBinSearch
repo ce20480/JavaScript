@@ -1,0 +1,25 @@
+// let arr = [1,2,3,4,5,6,7,8];
+let arr = [];
+let start = 0;
+let target = 100000;
+
+for (let i = 1; i <= 1024; i++) {
+    arr.push(i)    
+}
+// console.log(arr)
+
+let end = arr.length - 1;
+
+function binarySearch(arr, start, end, target) {
+//  checking if an element exists in a sorted list
+    console.log(arr.slice(start,end))//showing what's actually going on
+    if (start>end) return false;
+    let midIndex = Math.floor((start+end) / 2);
+    if (arr[midIndex] == target) return true;
+
+    if (arr[midIndex] > target) return binarySearch(arr,start, midIndex-1, target)
+    // if (arr[midIndex] < target) return binarySearch(arr, midIndex+1, end, target) one way of doing it
+    else return binarySearch(arr, midIndex+1, end, target)
+}
+
+binarySearch(arr,start,end,target);
