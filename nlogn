@@ -1,0 +1,10 @@
+// complexity nlogn
+function nlogNFunc(n) {
+    let y = n;
+    while(n>1){
+        n = math.floor(n/2);//this cause O(logn)
+        for (let i = 1; i <= y; i++){
+            console.log(i)//this causes O(nlogn) since you have to iterate through n times during logn steps
+        }
+    }        
+}
